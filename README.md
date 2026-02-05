@@ -1,4 +1,4 @@
-# 🌍 Hybrid Multilingual Transliteration System
+# Multilingual Transliteration System
 
 A powerful and accurate transliteration tool that converts **Roman (English) text** into native scripts including **Hindi, Bengali, and Tamil**. It uses a hybrid approach combining neural transformation (mT5) with precise rule-based engines.
 
