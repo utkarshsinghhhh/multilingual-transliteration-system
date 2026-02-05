@@ -1,7 +1,15 @@
+# dataset.py
+# Multilingual Aksharantar Dataset Loader
+# Auto Download + Offline Support
+
 import json
 import zipfile
 import os
 from huggingface_hub import hf_hub_download
+
+# -----------------------------------
+# Language Mapping
+# -----------------------------------
 
 LANG_PREFIX = {
     "hi": "hin",
@@ -11,18 +19,23 @@ LANG_PREFIX = {
 
 DATA_DIR = "data"
 
+
+# -----------------------------------
+# Download or Load Local ZIP
+# -----------------------------------
+
 def get_zip_path(prefix):
 
     os.makedirs(DATA_DIR, exist_ok=True)
 
     local_path = os.path.join(DATA_DIR, f"{prefix}.zip")
 
-  
+    # Use local if exists
     if os.path.exists(local_path):
         print(f"Using local file → {local_path}")
         return local_path
 
-    
+    # Else download
     print(f"Downloading {prefix}.zip from HuggingFace...")
 
     zip_path = hf_hub_download(
@@ -32,6 +45,11 @@ def get_zip_path(prefix):
     )
 
     return zip_path
+
+
+# -----------------------------------
+# Read ZIP Dataset
+# -----------------------------------
 
 def load_language_dataset(prefix):
 
@@ -64,6 +82,11 @@ def load_language_dataset(prefix):
             data[split] = records
 
     return data
+
+
+# -----------------------------------
+# Main Loader
+# -----------------------------------
 
 if __name__ == "__main__":
 
