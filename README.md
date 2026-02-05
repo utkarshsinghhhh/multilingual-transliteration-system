@@ -1,4 +1,4 @@
-# Multilingual Transliteration System
+#  Multilingual Transliteration System
 
 A powerful and accurate transliteration tool that converts **Roman (English) text** into native scripts including **Hindi, Bengali, and Tamil**. It uses a hybrid approach combining neural transformation (mT5) with precise rule-based engines.
 
@@ -31,7 +31,7 @@ pip install indic-transliteration sentencepiece protobuf gradio
 ### Option 1: Web Interface (Recommended)
 Run the Gradio app for a beautiful, interactive UI:
 ```bash
-python maincode.py
+python app.py
 ```
 *Locally visit: `http://127.0.0.1:7860`*
 
@@ -63,7 +63,7 @@ The system correctly maps phonetic Roman text to the target script:
 ---
 
 ## Project Structure
-- `maincode.py`: Full-featured Gradio Web Application.
+- `app.py`: Full-featured Gradio Web Application.
 - `main.py`: Hybrid transliteration logic (CLI).
 - `dataset.py`: AI4Bharat dataset handling and downloading.
 - `requirements.txt`: List of required libraries.
